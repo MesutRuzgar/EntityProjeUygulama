@@ -16,5 +16,14 @@ namespace EntityProjeUygulama
         {
             InitializeComponent();
         }
+        //entity data model kullandığımız için bu şekilde bağlandık.
+        DbEntityUrunEntities db = new DbEntityUrunEntities();
+
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            var kategoriler=db.Tbl_Kategori.ToList();
+            dataGridView1.DataSource= kategoriler;
+
+        }
     }
 }
