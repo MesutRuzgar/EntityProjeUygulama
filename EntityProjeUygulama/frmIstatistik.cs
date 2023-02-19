@@ -44,6 +44,7 @@ namespace EntityProjeUygulama
             //sehri sec bunları tekrarsız getir topla string yaz dedik
             label21.Text = (from x in db.Tbl_Musteri select x.Sehir).Distinct().Count().ToString() ;
             //en fazla ürünlü marka
+            //sql üzerinde prosedür oluşturup dbset üzerinden projeye ekledik
             label15.Text = db.markagetir().FirstOrDefault();
 
         }
