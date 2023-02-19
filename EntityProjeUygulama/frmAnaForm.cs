@@ -22,5 +22,11 @@ namespace EntityProjeUygulama
             Form1 fr = new Form1();
             fr.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmUrun fr = new frmUrun();
+            fr.Show();
+        }
     }
 }
