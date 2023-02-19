@@ -51,6 +51,7 @@
             // 
             // tbxKategoriId
             // 
+            this.tbxKategoriId.Enabled = false;
             this.tbxKategoriId.Location = new System.Drawing.Point(114, 22);
             this.tbxKategoriId.Name = "tbxKategoriId";
             this.tbxKategoriId.Size = new System.Drawing.Size(114, 26);
@@ -100,6 +101,7 @@
             this.btnSil.TabIndex = 6;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -118,6 +120,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(332, 158);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Form1
             // 

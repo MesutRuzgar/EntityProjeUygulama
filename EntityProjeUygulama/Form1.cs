@@ -43,5 +43,21 @@ namespace EntityProjeUygulama
             MessageBox.Show("Kategori Eklendi");
             Listele();
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            var ktgr = db.Tbl_Kategori.Find(int.Parse(tbxKategoriId.Text));
+           db.Tbl_Kategori.Remove(ktgr);
+            db.SaveChanges() ;
+            MessageBox.Show("Kategori Silindi");
+            Listele();
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbxKategoriId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tbxKategoriAd.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
     }
 }
