@@ -243,6 +243,7 @@
             this.MaximizeBox = false;
             this.Name = "frmUrun";
             this.Text = "frmUrun";
+            this.Load += new System.EventHandler(this.frmUrun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
