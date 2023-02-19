@@ -24,6 +24,7 @@ namespace EntityProjeUygulama
         public string MusteriAd { get; set; }
         public string MusteriSoyad { get; set; }
         public string Sehir { get; set; }
+        public Nullable<bool> Durum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_Satis> Tbl_Satis { get; set; }
