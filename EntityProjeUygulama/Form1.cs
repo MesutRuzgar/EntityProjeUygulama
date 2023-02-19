@@ -21,9 +21,27 @@ namespace EntityProjeUygulama
 
         private void btnListele_Click(object sender, EventArgs e)
         {
-            var kategoriler=db.Tbl_Kategori.ToList();
-            dataGridView1.DataSource= kategoriler;
+            Listele();
 
+        }
+
+        private void Listele()
+        {
+            var kategoriler = db.Tbl_Kategori.ToList();
+            dataGridView1.DataSource = kategoriler;
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            //entity kullandığımız için sql tarzında değil
+            //hafızada kategori newledik ve yeni veri eklemiş olduk
+            Tbl_Kategori t = new Tbl_Kategori();
+            t.KategoriAd=tbxKategoriAd.Text;  
+            db.Tbl_Kategori.Add(t);
+            //savaChanges-> yaptığımız değişiklikleri kaydet dedil
+            db.SaveChanges();
+            MessageBox.Show("Kategori Eklendi");
+            Listele();
         }
     }
 }
