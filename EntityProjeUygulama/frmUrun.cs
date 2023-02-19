@@ -24,7 +24,16 @@ namespace EntityProjeUygulama
 
         private void Listele()
         {
-            dataGridView1.DataSource = db.Tbl_Urun.ToList();
+            dataGridView1.DataSource = (from x in db.Tbl_Urun select new
+            {
+                x.UrunId,
+                x.UrunAdi,
+                x.Marka,
+                x.Stok,
+                x.Fiyat,
+                x.Durum,
+                x.Tbl_Kategori.KategoriAd
+            }).ToList();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -33,7 +42,7 @@ namespace EntityProjeUygulama
             t.UrunAdi = tbxUrunAd.Text;
             t.Marka = tbxMarka.Text;
             t.Stok = int.Parse(tbxStok.Text);
-            t.Kategori = int.Parse(cbxKategori.Text);
+            t.Kategori = int.Parse(cbxKategori.SelectedValue.ToString());
             t.Fiyat = decimal.Parse(tbxFiyat.Text);
             t.Durum = true;
             db.Tbl_Urun.Add(t);
@@ -71,7 +80,7 @@ namespace EntityProjeUygulama
             urun.Marka = tbxMarka.Text;
             urun.Fiyat = decimal.Parse(tbxFiyat.Text);
             urun.Durum = bool.Parse(tbxDurum.Text);
-            urun.Kategori = int.Parse(cbxKategori.Text);
+            urun.Kategori = int.Parse(cbxKategori.SelectedValue.ToString());
 
             db.SaveChanges();
             MessageBox.Show("Ürün başarıyla güncellendi");
