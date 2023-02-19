@@ -41,5 +41,26 @@ namespace EntityProjeUygulama
             MessageBox.Show("Ürün başarıyla kaydedildi");
             Listele();
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            var id = db.Tbl_Urun.Find(int.Parse(tbxUrunId.Text));
+
+            db.Tbl_Urun.Remove(id);
+            db.SaveChanges();
+            MessageBox.Show("Ürün başarıyla silindi");
+            Listele();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbxUrunId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tbxUrunAd.Text= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tbxMarka.Text= dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            tbxStok.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            tbxFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            tbxDurum.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cbxKategori.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+        }
     }
 }
