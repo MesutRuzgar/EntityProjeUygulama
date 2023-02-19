@@ -52,6 +52,7 @@
             // 
             // tbxUrunId
             // 
+            this.tbxUrunId.Enabled = false;
             this.tbxUrunId.Location = new System.Drawing.Point(117, 18);
             this.tbxUrunId.Name = "tbxUrunId";
             this.tbxUrunId.Size = new System.Drawing.Size(139, 26);
@@ -163,6 +164,7 @@
             this.btnListele.TabIndex = 14;
             this.btnListele.Text = "Listele";
             this.btnListele.UseVisualStyleBackColor = true;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
             // 
             // btnEkle
             // 
@@ -172,6 +174,7 @@
             this.btnEkle.TabIndex = 15;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnSil
             // 
