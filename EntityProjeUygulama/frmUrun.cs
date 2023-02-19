@@ -62,5 +62,21 @@ namespace EntityProjeUygulama
             tbxDurum.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             cbxKategori.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            var urun = db.Tbl_Urun.Find(int.Parse(tbxUrunId.Text));
+            urun.UrunAdi= tbxUrunAd.Text;
+            urun.Stok=int.Parse(tbxStok.Text);
+            urun.Marka=tbxMarka.Text;
+            urun.Fiyat=decimal.Parse(tbxFiyat.Text);
+            urun.Durum = bool.Parse(tbxDurum.Text);
+            urun.Kategori =int.Parse( cbxKategori.Text);
+            
+            db.SaveChanges();
+            MessageBox.Show("Ürün başarıyla güncellendi");
+            Listele();
+
+        }
     }
 }
