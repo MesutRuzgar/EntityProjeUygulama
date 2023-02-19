@@ -36,7 +36,7 @@ namespace EntityProjeUygulama
             //entity kullandığımız için sql tarzında değil
             //hafızada kategori newledik ve yeni veri eklemiş olduk
             Tbl_Kategori t = new Tbl_Kategori();
-            t.KategoriAd=tbxKategoriAd.Text;  
+            t.KategoriAd = tbxKategoriAd.Text;
             db.Tbl_Kategori.Add(t);
             //savaChanges-> yaptığımız değişiklikleri kaydet dedil
             db.SaveChanges();
@@ -47,8 +47,8 @@ namespace EntityProjeUygulama
         private void btnSil_Click(object sender, EventArgs e)
         {
             var ktgr = db.Tbl_Kategori.Find(int.Parse(tbxKategoriId.Text));
-           db.Tbl_Kategori.Remove(ktgr);
-            db.SaveChanges() ;
+            db.Tbl_Kategori.Remove(ktgr);
+            db.SaveChanges();
             MessageBox.Show("Kategori Silindi");
             Listele();
 
@@ -58,6 +58,16 @@ namespace EntityProjeUygulama
         {
             tbxKategoriId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             tbxKategoriAd.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            var ktgr = db.Tbl_Kategori.Find(int.Parse(tbxKategoriId.Text));
+            ktgr.KategoriAd=tbxKategoriAd.Text;
+            db.SaveChanges();
+            MessageBox.Show("Kategori Güncellendi");
+            Listele();
+
         }
     }
 }
