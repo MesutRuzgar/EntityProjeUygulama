@@ -67,6 +67,12 @@
     <Compile Include="frmAnaForm.Designer.cs">
       <DependentUpon>frmAnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIstatistik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIstatistik.Designer.cs">
+      <DependentUpon>frmIstatistik.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUrun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnaForm.resx">
       <DependentUpon>frmAnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIstatistik.resx">
+      <DependentUpon>frmIstatistik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUrun.resx">
       <DependentUpon>frmUrun.cs</DependentUpon>
